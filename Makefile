@@ -7,7 +7,7 @@ build:	buildapp
 buildapp:
 	cd app && npm run build && cd ..
 
-run:
+start:
 	docker-compose up --build
 
 stop:
@@ -16,4 +16,4 @@ stop:
 clean:
 	cd api && rm -rf node_modules/ && cd ..
 	cd app && rm -rf node_modules/ build/ && cd ..
-	cd db && rm -rf data/
+	cd data && rm -rf dd/ && cd ..

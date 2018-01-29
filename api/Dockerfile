@@ -14,4 +14,4 @@ COPY package.json /srv/api
 RUN npm install
 
 # start app
-CMD ["npm", "run", "start:dev"]
+CMD [ "npm", "run", "start:dev"]

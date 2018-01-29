@@ -29,7 +29,7 @@ the `makefile` is not a real makefile, with targets and rules dependencies; but 
   ```
 - run with docker-compose
   ```
-  $ make run
+  $ make start
   ```
 - open your browser on [http://localhost/](http://localhost/)
 
