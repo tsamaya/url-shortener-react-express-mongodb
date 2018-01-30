@@ -2,9 +2,7 @@ install:
 	cd api && npm install && cd ..
 	cd app && npm install && cd ..
 
-build:	buildapp
-
-buildapp:
+build:
 	cd app && npm run build && cd ..
 
 start:
