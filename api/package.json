@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "lint": "eslint .",
+    "docs": "apidoc -i ./lib/ -o apidocs",
     "start:dev": "DEBUG=url-shortener:* nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
