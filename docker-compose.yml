@@ -6,6 +6,7 @@ services:
       - ${NGINX_PORT}:80 # expose ports - HOST:CONTAINER
     volumes:
       - ./app/build/:/usr/share/nginx/html
+      - ./api/apidocs:/usr/share/nginx/apidocs
     links:
       - api
   api:
@@ -22,7 +23,7 @@ services:
       - MONGO_PORT=${MONGO_PORT}
       - MONGO_HOST=${MONGO_HOST}
       - MONGO_NAME=${MONGO_NAME}
-    #   - BASE_URL=${BASE_URL}
+      - BASE_URL=${BASE_URL}
     depends_on:
       - mongo
   mongo:
