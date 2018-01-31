@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{short.title}}</title>
+  <meta name="description" content="{{{short.description}}}" />
+  <meta property="og:description" content="{{{short.og_description}}}" />
+  <meta property="og:image" content="{{{short.og_image}}}" />
+  <meta property="og:url" content="{{short.url}}" />
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="{{short.title}}">
+  <meta property="twitter:description" content="{{{short.og_description}}}" />
+  <meta property="twitter:image" content="{{{short.og_image}}}" />
+</head>
+
+<body>
+  {{#if short.ga}}
+    <script>
+      (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+          (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+      ga('create', '{{{short.ga}}}', 'auto');
+      ga('send', 'pageview');
+    </script>
+  {{/if}}
+  <script>
+  (function() {
+    window.location.replace("{{{short.url}}}")
+  })()
+</script>
+</body>
+
+</html>
