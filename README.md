@@ -17,7 +17,7 @@ This URL shortner is a this sample application. It uses :
 
 ## Build and run the application
 
-the `makefile` is not a real makefile, with targets and rules dependencies; but a handy script to get started
+the `makefile` is not a real makefile, with targets and rules dependencies; but a handy script to get started:
 
 - prepare environment:
   ```

@@ -11,6 +11,12 @@ start:
 stop:
 	docker-compose down
 
+startdev:
+	docker-compose -f docker-compose.dev.yml up --build
+
+stopdev:
+	docker-compose -f docker-compose.dev.yml down
+
 clean:
 	cd api && rm -rf node_modules/ && cd ..
 	cd app && rm -rf node_modules/ build/ && cd ..
