@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Control, Field, Input } from 'reactbulma';
 import FontAwesome from 'react-fontawesome';
 import './InputURLForm.css';
+import postURL from './UrlShortner';
 
 class InputURLForm extends React.Component {
   constructor(props) {
@@ -25,6 +26,7 @@ class InputURLForm extends React.Component {
   handleSubmit(event) {
     console.log(`A url was submitted: ${this.state.value}`); // eslint-disable-line
     event.preventDefault();
+    postURL(this.state.value);
   }
 
   render() {
