@@ -1,4 +1,6 @@
 import React from 'react';
+import { Button, Control, Field, Input } from 'reactbulma';
+import FontAwesome from 'react-fontawesome';
 import './InputURLForm.css';
 
 class InputURLForm extends React.Component {
@@ -27,27 +29,27 @@ class InputURLForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label htmlFor="url">
-          Long URL
-          <input
-            type="text"
-            id="url"
-            value={this.state.value}
-            onChange={this.handleChange}
-            onClick={this.handleInputClick}
-            autoComplete="off"
-          />
-        </label>
-        <span className="input-group-btn">
-          <button
-            className="btn btn-shorten"
-            type="button"
-            onClick={this.handleSubmit}
-          >
-            SHORTEN
-          </button>
-        </span>
+      <form className="URLForm">
+        <Field>
+          <label className="label" htmlFor="url">
+            <Control>
+              <Input
+                type="text"
+                id="url"
+                className="is-medium"
+                placeholder="Paste a link..."
+                value={this.state.value}
+                onChange={this.handleChange}
+                onClick={this.handleInputClick}
+                autoComplete="off"
+              />
+            </Control>
+            {/* <p className="help">This is a help text</p> */}
+          </label>
+        </Field>
+        <Button className="is-medium" onClick={this.handleSubmit}>
+          <FontAwesome name="link" />&nbsp;SHORTEN
+        </Button>
       </form>
     );
   }

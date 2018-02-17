@@ -1,0 +1,17 @@
+.URLForm {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 80px;
+}
+
+@media (min-width: 768px) {
+  .URLForm {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .URLForm {
+    width: 700px;
+  }
+}
