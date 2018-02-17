@@ -1,5 +1,9 @@
+import 'whatwg-fetch';
 import React from 'react';
+
 import logo from './logo.svg';
+import InputURLForm from './InputURLForm';
+
 import './App.css';
 
 const App = () => (
@@ -11,6 +15,7 @@ const App = () => (
     <p className="App-intro">
       To get started, edit <code>src/App.js</code> and save to reload.
     </p>
+    <InputURLForm />
   </div>
 );
 
