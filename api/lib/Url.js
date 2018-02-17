@@ -4,6 +4,20 @@ const ShortId = require('mongoose-shortid-nodeps');
 const request = require('request');
 const helper = require('./helper');
 
+const titleRegex = new RegExp('<title>(.*?)</title>', 'i');
+const metaDescriptionRegex = new RegExp(
+  '<meta[^>]*name=["|\']description["|\'][^>]*content=["]([^"]*)["][^>]*>',
+  'i'
+);
+const ogDescriptionRegex = new RegExp(
+  '<meta[^>]*property=["|\']og:description["|\'][^>]*content=["]([^"]*)["][^>]*>',
+  'i'
+);
+const ogImageRegex = new RegExp(
+  '<meta[^>]*property=["|\']og:image["|\'][^>]*content=["]([^"]*)["][^>]*>',
+  'i'
+);
+
 const schemaOptions = {
   strict: true,
   timestamps: true,
@@ -49,20 +63,6 @@ urlSchema.pre('update', function(next) { // eslint-disable-line
   this.options.runValidators = true;
   next();
 });
-
-const titleRegex = new RegExp('<title>(.*?)</title>', 'i');
-const metaDescriptionRegex = new RegExp(
-  '<meta[^>]*name=["|\']description["|\'][^>]*content=["]([^"]*)["][^>]*>',
-  'i'
-);
-const ogDescriptionRegex = new RegExp(
-  '<meta[^>]*property=["|\']og:description["|\'][^>]*content=["]([^"]*)["][^>]*>',
-  'i'
-);
-const ogImageRegex = new RegExp(
-  '<meta[^>]*property=["|\']og:image["|\'][^>]*content=["]([^"]*)["][^>]*>',
-  'i'
-);
 
 urlSchema.pre('save', function(next) { // eslint-disable-line
   debug('presave');
