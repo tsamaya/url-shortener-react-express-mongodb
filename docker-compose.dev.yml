@@ -26,6 +26,8 @@ services:
             - MONGO_HOST=${MONGO_HOST}
             - MONGO_NAME=${MONGO_NAME}
             - BASE_URL=${BASE_URL}
+        links:
+            - mongo
     app:
         build: ./app
         volumes:
