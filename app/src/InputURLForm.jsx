@@ -26,7 +26,14 @@ class InputURLForm extends React.Component {
   handleSubmit(event) {
     console.log(`A url was submitted: ${this.state.value}`); // eslint-disable-line
     event.preventDefault();
-    postURL(this.state.value);
+    postURL(this.state.value).then(
+      data => {
+        console.log('success', data);
+      },
+      error => {
+        console.log('error', error);
+      }
+    );
   }
 
   render() {
