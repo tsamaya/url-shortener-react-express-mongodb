@@ -1,7 +1,7 @@
 const postURL = url => {
   const api = '/api/v1/short';
   // const api = 'http://localhost/api/v1/short';
-  fetch(api, {
+  return fetch(api, {
     method: 'POST',
     body: JSON.stringify({
       url,
